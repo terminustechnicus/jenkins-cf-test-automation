@@ -47,7 +47,6 @@ node {
     
     docker.image('centos:7').inside("-u root"){
      sh 'echo inside container'
-     sh 'pwd'
-     sh 'ls'
+     sh 'whoami'
     }
     }

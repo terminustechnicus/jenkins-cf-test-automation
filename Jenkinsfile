@@ -35,6 +35,8 @@ pipeline {
     }
 }
 */
+checkout scm
+
 stage('pre-create') {
     stage('Validate Template'){
         node {

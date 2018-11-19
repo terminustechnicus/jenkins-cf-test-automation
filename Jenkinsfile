@@ -57,16 +57,19 @@ stage('pre-create') {
     }
     stage('Lint Template'){
         node {
-    docker.image('centos:7').inside("-u root"){
-        sh 'yum install rubygems -y'
-        sh 'gem install cfn-nag'
-        sh 'cfn_nag_scan --input-path test-template.json'
-    }
-    }
+            docker.image('centos:7').inside("-u root"){
+            sh 'yum install rubygems -y'
+            sh 'gem install cfn-nag'
+            sh 'cfn_nag_scan --input-path test-template.json'
+            }
+        }
+    }      
 }
 
-stage('create'){    node {
-    
-    }}
+stage('create') {
+    node {
+        echo "create stack stage"
+    }
+}
 
     

@@ -43,16 +43,13 @@ node {
     
     docker.image('centos:7').inside("-u root"){
      sh 'echo inside container'
-     sh 'yum update'
-     /*
      sh 'uname -a'
      sh 'whoami'
      sh 'curl -O https://bootstrap.pypa.io/get-pip.py'
      sh 'python get-pip.py --user'
      sh 'export PATH=~/.local/bin:$PATH'
      sh '/root/.local/bin/pip install awscli --upgrade --user'
-     sh 'aws --version'
-     */
+     sh '/root/.local/bin/aws --version'
     }
 }    
 

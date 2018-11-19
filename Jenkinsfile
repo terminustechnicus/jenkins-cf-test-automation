@@ -21,7 +21,7 @@ stage('post-create') {
     }
 }
 */
-/*
+
 pipeline {
     agent {
         docker { image 'centos:latest' }
@@ -29,18 +29,13 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'python --version'
-                sh 'whoami'
-                sh 'curl -O https://bootstrap.pypa.io/get-pip.py'
-                sh 'python get-pip.py --user'
-                sh 'export PATH=~/.local/bin:$PATH'
-                sh ' pip install awscli --upgrade --user'
-                sh 'aws --version'
+                sh 'uname -a'
             }
         }
     }
 }
-*/
+
+/*
 node {
     sh 'uname -a'
     sh 'pwd'
@@ -57,4 +52,5 @@ node {
      sh 'aws --version'
     }
 }    
+*/
     

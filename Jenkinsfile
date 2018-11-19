@@ -28,13 +28,10 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'python --version'
-                sh 'pwd'
-                sh 'ls -la'
-                sh 'cd ~'
-                sh 'ls -la'
+                sh 'curl -O https://bootstrap.pypa.io/get-pip.py'
+                sh 'python get-pip.py'
                // sh 'export PATH=~/.local/bin:$PATH'
-              //  sh 'sudo pip --version'
+                sh 'pip --version'
               //  sh 'sudo pip install awscli --upgrade --user'
               //  sh 'aws --version'
             }

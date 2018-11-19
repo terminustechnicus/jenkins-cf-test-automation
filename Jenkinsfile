@@ -41,24 +41,12 @@ pipeline {
     }
 }
 */
-pipeline {
-    agent none
-    stages {
-        stage('Back-end') {
-            agent {
-                docker { image 'maven:3-alpine' }
-            }
-            steps {
-                sh 'mvn --version'
-            }
-        }
-        stage('Front-end') {
-            agent {
-                docker { image 'node:7-alpine' }
-            }
-            steps {
-                sh 'node --version'
-            }
-        }
+node {
+    sh 'pwd'
+    sh 'ls'
+    
+    docker.image('centos:7').inside("-u root"){
+     sh 'echo inside container'
+     sh 'pwd'
+     sh 'ls'
     }
-}

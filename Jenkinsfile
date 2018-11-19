@@ -35,7 +35,11 @@ pipeline {
     }
 }
 */
-checkout scm
+stage('Source Checkout'){
+    node {
+        checkout scm
+    }
+}   
 
 stage('pre-create') {
     stage('Validate Template'){

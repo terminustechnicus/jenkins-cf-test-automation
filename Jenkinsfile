@@ -23,15 +23,15 @@ stage('post-create') {
 */
 pipeline {
     agent {
-        docker { image 'amazonlinux' }
+        docker { image 'centos:latest' }
     }
     stages {
         stage('Test') {
             steps {
-                sh 'sudo yum update'
-                sh 'sudo yum install aws-cli -y'
+                sh 'python --version'
+               // sh 'sudo yum install aws-cli -y'
                // sh 'export PATH=~/.local/bin:$PATH'
-                sh 'aws --version'
+                //sh 'aws --version'
               //  sh 'sudo pip install awscli --upgrade --user'
               //  sh 'aws --version'
             }

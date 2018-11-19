@@ -28,10 +28,10 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'curl -O https://bootstrap.pypa.io/get-pip.py'
-                sh 'python get-pip.py'
+                sh 'yum update'
+                sh 'yum install aws-cli -y'
                // sh 'export PATH=~/.local/bin:$PATH'
-                sh 'pip --version'
+                sh 'aws --version'
               //  sh 'sudo pip install awscli --upgrade --user'
               //  sh 'aws --version'
             }

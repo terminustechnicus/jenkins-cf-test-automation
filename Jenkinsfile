@@ -21,6 +21,7 @@ stage('post-create') {
     }
 }
 */
+/*
 pipeline {
     agent {
         docker { image 'centos:latest' }
@@ -38,4 +39,13 @@ pipeline {
             }
         }
     }
+}
+*/
+node {
+ 
+ docker.image('centos:latest').inside() {
+           
+            sh 'whoami'
+        }   
+    
 }

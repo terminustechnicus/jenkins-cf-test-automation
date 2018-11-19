@@ -68,6 +68,7 @@ stage('pre-create') {
             sh 'yum install rh-ruby22 -y'
             sh 'scl enable rh-ruby22 bash'
             sh 'yum install rubygems -y'
+            sh 'ruby -v'
             sh 'gem install cfn-nag'
             sh 'cfn_nag_scan --input-path test-template.json'
             }

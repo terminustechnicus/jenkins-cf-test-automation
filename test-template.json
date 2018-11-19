@@ -1,13 +1,6 @@
 {
     "AWSTemplateFormatVersion": "2010-09-09",
-    "Description": "Creates a new CodeCommit repository and populates it with contents from S3 or another git repo.",
-    "Mappings": {
-        "Functions": {
-            "PropagateRepo": {
-                "S3Key": "lambda_functions/git_pull.zip",
-                "LogLevel": "debug",
-                "Handler": "git_pull"
-            }
+    "
         },
         "General": {
             "CodeRepo": {

@@ -28,8 +28,8 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'yum update'
-                sh 'yum install aws-cli -y'
+                sh 'sudo yum update'
+                sh 'sudo yum install aws-cli -y'
                // sh 'export PATH=~/.local/bin:$PATH'
                 sh 'aws --version'
               //  sh 'sudo pip install awscli --upgrade --user'

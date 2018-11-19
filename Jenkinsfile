@@ -57,20 +57,12 @@ stage('pre-create') {
     }
     stage('Lint Template'){
         node {
-            docker.image('centos:7').inside("-u root"){
-            sh 'yum  update -y'
-                /*
-            sh 'yum install ruby -y'
-            sh 'yum install gcc g++ make automake autoconf curl-devel openssl-devel zlib-devel httpd-devel apr-devel apr-util-devel sqlite-devel -y'
-            sh 'yum install ruby-rdoc ruby-devel -y'
-            */
-            sh 'yum install centos-release-scl-rh centos-release-scl -y'
-            sh 'yum install rh-ruby22 -y'
-            sh 'scl enable rh-ruby22 bash'
-            sh 'yum install rubygems -y'
-            sh 'ruby -v'
-            sh 'gem install cfn-nag'
-            sh 'cfn_nag_scan --input-path test-template.json'
+            docker.image('ubuntu:16.04').inside("-u root"){
+             sh 'apt-get -y update'
+             sh 'apt-get -y install ruby-full'
+             sh 'apt-get -y install jq'
+             sh 'gem install cfn-nag'
+             sh 'cfn_nag_scan --input-path test-template.json'
             }
         }
     }      

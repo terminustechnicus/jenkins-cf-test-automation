@@ -35,23 +35,31 @@ pipeline {
     }
 }
 */
+stage('pre-create') {
+    stage('Validate Template'){
+        node {
+            sh 'uname -a'
+            sh 'pwd'
+            sh 'ls'
 
-node {
-    sh 'uname -a'
-    sh 'pwd'
-    sh 'ls'
-    
-    docker.image('centos:7').inside("-u root"){
-     sh 'echo inside container'
-     sh 'uname -a'
-     sh 'whoami'
-     sh 'curl -O https://bootstrap.pypa.io/get-pip.py'
-     sh 'python get-pip.py --user'
-     sh 'export PATH=~/.local/bin:$PATH'
-     sh '/root/.local/bin/pip install awscli --upgrade --user'
-     sh '/root/.local/bin/aws --version'
-     sh '/root/.local/bin/aws cloudformation validate-template --template-body file://test-template.json --region us-east-1'
+            docker.image('centos:7').inside("-u root"){
+             sh 'echo inside container'
+             sh 'uname -a'
+             sh 'whoami'
+             sh 'curl -O https://bootstrap.pypa.io/get-pip.py'
+             sh 'python get-pip.py --user'
+             sh 'export PATH=~/.local/bin:$PATH'
+             sh '/root/.local/bin/pip install awscli --upgrade --user'
+             sh '/root/.local/bin/aws --version'
+             sh '/root/.local/bin/aws cloudformation validate-template --template-body file://test-template.json --region us-east-1'
+            }
+        }   
     }
-}    
+    stage('Lint Template'){}
+}
+
+stage('create'){    node {
+        echo "create stack stage"
+    }}
 
     

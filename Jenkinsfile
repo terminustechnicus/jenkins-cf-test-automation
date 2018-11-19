@@ -54,4 +54,5 @@ node {
      sh 'pip install awscli --upgrade --user'
      sh 'aws --version'
     }
+}    
     

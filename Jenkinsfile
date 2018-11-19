@@ -48,5 +48,7 @@ node {
     docker.image('centos:7').inside("-u root"){
      sh 'echo inside container'
      sh 'whoami'
+     sh 'curl -O https://bootstrap.pypa.io/get-pip.py'
+     sh 'python get-pip.py --user'
     }
     }

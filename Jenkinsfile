@@ -23,12 +23,12 @@ stage('post-create') {
 */
 pipeline {
     agent {
-        docker { image 'node:7-alpine' }
+        docker { image 'amazonlinux' }
     }
     stages {
         stage('Test') {
             steps {
-                sh 'node --version'
+                sh 'aws --version'
             }
         }
     }

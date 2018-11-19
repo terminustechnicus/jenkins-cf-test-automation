@@ -29,7 +29,8 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'python --version'
-                sh 'python3 --version'
+                sh 'pwd'
+                sh 'ls -la'
                // sh 'export PATH=~/.local/bin:$PATH'
               //  sh 'sudo pip --version'
               //  sh 'sudo pip install awscli --upgrade --user'

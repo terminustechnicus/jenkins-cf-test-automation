@@ -71,7 +71,7 @@ stage('pre-create') {
 stage('create') {
     node {
         echo "create stack stage"
-        sh 'cat test-template.json'
+        sh 'rm *'
     }
 }
 

@@ -19,7 +19,7 @@
             }
         }
     },
-    "Parameter": {
+    "Parameter": 
         "SourceRepoUrl": {
             "Description": "Source repository https clone url, if specified SourceS3 parameters will be ignored and source will be fetched from this git repo",
             "Type": "String",

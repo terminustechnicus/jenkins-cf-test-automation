@@ -28,6 +28,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
+                sh 'pip install --upgrade awscli'
                 sh 'aws --version'
             }
         }

@@ -59,6 +59,9 @@ stage('pre-create') {
         node {
             docker.image('centos:7').inside("-u root"){
             sh 'yum  update -y'
+            sh 'sudo yum install ruby -y'
+            sh 'sudo yum install gcc g++ make automake autoconf curl-devel openssl-devel zlib-devel httpd-devel apr-devel apr-util-devel sqlite-devel -y'
+            sh 'sudo yum install ruby-rdoc ruby-devel -y'
             sh 'yum install rubygems -y'
             sh 'gem install cfn-nag'
             sh 'cfn_nag_scan --input-path test-template.json'

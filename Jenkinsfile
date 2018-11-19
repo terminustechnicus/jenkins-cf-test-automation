@@ -28,6 +28,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
+                sh 'whoami'
                 sh 'curl -O https://bootstrap.pypa.io/get-pip.py'
                 sh 'python get-pip.py'
                 sh 'export PATH=~/.local/bin:$PATH'

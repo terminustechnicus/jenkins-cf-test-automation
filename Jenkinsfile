@@ -3,4 +3,20 @@
  */
 // FIXME write this
 
-echo("hello from Pipeline");
+stage('pre-create') {
+    node {
+        echo "pre-create stack stage"
+    }
+}
+
+stage('create') {
+    node {
+        echo "create stack stage"
+    }
+}
+
+stage('post-create') {
+    node {
+        echo "post-create stack stage"
+    }
+}

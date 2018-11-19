@@ -31,6 +31,8 @@ pipeline {
                 sh 'python --version'
                 sh 'pwd'
                 sh 'ls -la'
+                sh 'cd ~'
+                sh 'ls -la'
                // sh 'export PATH=~/.local/bin:$PATH'
               //  sh 'sudo pip --version'
               //  sh 'sudo pip install awscli --upgrade --user'

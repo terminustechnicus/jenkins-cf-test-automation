@@ -50,7 +50,7 @@ node {
      sh 'export PATH=~/.local/bin:$PATH'
      sh '/root/.local/bin/pip install awscli --upgrade --user'
      sh '/root/.local/bin/aws --version'
-     sh 'aws cloudformation validate-template --template-body file://test-template.json'
+     sh '/root/.local/bin/aws cloudformation validate-template --template-body file://test-template.json'
     }
 }    
 
